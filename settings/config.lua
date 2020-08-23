@@ -5,7 +5,7 @@ Please do not redistribute
 
 local config = {}
 
-config.restrictMenu = false -- enables or disables (side-)menu for mods, spawning vehicles, tuning, environment, trackbuilder and replay
+config.restrictMenu = true -- enables or disables (side-)menu for mods, spawning vehicles, tuning, environment, trackbuilder and replay
 
 config.restrictActions = true -- enables or disables restricting actions globally (see below)
 config.disabledActions = {
@@ -49,6 +49,6 @@ config.motd.description = [[
 
 config.setTime = true -- enables or disables in-game time syncing to real world time
 config.timeOffsetHours = 0 -- 0 for utc, can be positive (+) or negative (-)
-config.syncTime = true -- whether in-game time should be actively synced with real world time
+config.syncTime = true -- whether in-game time should be actively synced with real world time (only works when settime = true)
 
 return config
