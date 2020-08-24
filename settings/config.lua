@@ -4,6 +4,11 @@ Please do not redistribute
 ]]--
 
 local config = {}
+config.reset = {}
+config.motd = {}
+config.timesync = {}
+
+config.messageDuration = 6000 -- global toast message duration in ms
 
 config.restrictMenu = true -- enables or disables (side-)menu for mods, spawning vehicles, tuning, environment, trackbuilder and replay
 
@@ -23,11 +28,15 @@ config.disabledActions = {
     "faster_motion", -- speeds up time
     "toggle_slow_motion", -- slows time down or resets if back to real time
     "dropPlayerAtCamera", -- puts the player at the camera
-    "reset_all_physics", -- restarts physics of all vehicles (reset)
-    "reset_physics", -- restarts the current scenario
 }
 
-config.motd = {}
+config.reset.enabled = true -- enables or disables vehicle reset
+config.reset.timeout = 30 -- how often a vehicle can be reset, -1 for no limit
+config.reset.title = "Vehicle Reset Limiter" -- title shown when resetting is restricted
+config.reset.message = "You can reset your vehicle in {secondsLeft} seconds." -- message shown when resetting is restricted
+config.reset.disabledMessage = "Vehicle resetting is disabled on this server." -- message shown when resetting is completely disabled
+
+config.motd.enabled = true -- enables or disables the motd
 config.motd.type = "selectableVehicle" -- htmlOnly: simple (large) bbcode-only motd || selectableVehicle: motd with the ability to select a vehicle
 config.motd.title = "Welcome to a BeamMP server!"
 config.motd.description = [[
@@ -47,8 +56,8 @@ config.motd.description = [[
     [color=#FFC0CB][i][right]Made by vJoeyz#5115[/right][/i][/color]
 ]] -- all bbcodes can be found in the README
 
-config.setTime = true -- enables or disables in-game time syncing to real world time
-config.timeOffsetHours = 0 -- 0 for utc, can be positive (+) or negative (-)
-config.syncTime = true -- whether in-game time should be actively synced with real world time (only works when settime = true)
+config.timesync.enabled = true -- enables or disables in-game time syncing to real world time
+config.timesync.offsetHours = 0 -- 0 for utc, can be positive or negative (-)
+config.timesync.realtime = true -- whether in-game time should be actively synced with real world time (only works when timesync.enabled = true)
 
 return config
