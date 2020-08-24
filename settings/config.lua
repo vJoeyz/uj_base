@@ -7,6 +7,7 @@ local config = {}
 config.reset = {}
 config.motd = {}
 config.timesync = {}
+config.weathersync = {}
 
 config.messageDuration = 6000 -- global toast message duration in ms
 
@@ -43,7 +44,7 @@ config.motd.description = [[
     [img]uj_base/welcome.gif[/img]
     [br]
     [h2]Introduction[/h2]
-    This is a sample MOTD provided to you by [i]Uncle Joey's Base[/i]. Uncle Joey's Base provides some essential client-side addons for your BeamMP server. This MOTD supports BBCode. [color=#FF69B4]Awesome[/color] isn't it?
+    This is a sample motd provided to you by [i]Uncle Joey's Base[/i]. Uncle Joey's Base provides some essential client-side addons for your BeamMP server. This motd supports BBCode. [color=#FF69B4]Awesome[/color] isn't it?
     [h2]Rules[/h2]
     [list]
         [*]Be respectful
@@ -53,11 +54,18 @@ config.motd.description = [[
     [br]
     Expect many more futures to be added to Uncle Joey's Base in the future!
     [br][br]
-    [color=#FFC0CB][i][right]Made by vJoeyz#5115[/right][/i][/color]
-]] -- all bbcodes can be found in the README
+    [color=#FFC0CB][i][right]made with ❤️ by vJoeyz#5115[/right][/i][/color]
+]] -- all bbcodes can be found in README.md
 
 config.timesync.enabled = true -- enables or disables in-game time syncing to real world time
-config.timesync.offsetHours = 0 -- 0 for utc, can be positive or negative (-)
+config.timesync.offsetHours = 0 -- 0 for utc, can be positive (+) or negative (-)
 config.timesync.realtime = true -- whether in-game time should be actively synced with real world time (only works when timesync.enabled = true)
+
+-- NOTE: not all weather settings work on all maps
+config.weathersync.enabled = true -- enables or disables in-game weather syncing
+config.weathersync.cloudCover = 30 -- 0-100 (0 = no clouds; 100 = very cloudy)
+config.weathersync.windSpeed = 1 -- 0-10 (0 = no wind; 10 = very windy)
+config.weathersync.rainDrops = 20 -- 0-100 (0 = no rain; 100 = very rainy)
+config.weathersync.fogDensity = 0 -- 0-100 (0 = no fog; 100 = very foggy)
 
 return config
