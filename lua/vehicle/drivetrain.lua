@@ -76,7 +76,7 @@ local function init()
   --obj:queueGameEngineLua("extensions.loadModulesInDirectory('lua/vehicle/extensions/uj_base')")
   
   obj:queueGameEngineLua("extensions.addModulePath('lua/ge/extensions/uj_base')")
-	obj:queueGameEngineLua("extensions.loadModulesInDirectory('lua/ge/extensions/uj_base')")
+  obj:queueGameEngineLua("extensions.loadModulesInDirectory('lua/ge/extensions/uj_base')")
   -- </custom>
 end
 
