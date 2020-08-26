@@ -4,7 +4,7 @@ Uncle Joey's Base provides some essential client-side addons for your BeamMP ser
 - Player restrictions (limiting rewinds, menu options etc.)
 - Limiting resets to a certain amount per time
 - Day / night time syncing
-- Environment syncing (rain, wind, clouds, fog and gravity)
+- Environment (weather) syncing (rain, wind, clouds, fog and gravity)
 
 ## Getting started
 1. Download the latest release
