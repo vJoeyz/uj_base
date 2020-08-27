@@ -18,7 +18,7 @@ You can use BBCodes in your motd, `config.lua` contains a sample.
 > Note: external urls are not allowed by BeamNG and will not work, only local links and links to beamng.com are allowed.
 
 Variables:
-* `{serverTime}` prints the current server time
+* `{serverTime}` prints the current server time (as set in the config)
 
 
 ## Questions, Feature requests & Bugs
