@@ -38,10 +38,12 @@ config.reset.message = "You can reset your vehicle in {secondsLeft} seconds." --
 config.reset.disabledMessage = "Vehicle resetting is disabled on this server." -- message shown when resetting is completely disabled
 
 config.motd.enabled = true -- enables or disables the motd
-config.motd.type = "selectableVehicle" -- htmlOnly: simple (large) bbcode-only motd || selectableVehicle: motd with the ability to select a vehicle
+config.motd.type = "selectableVehicle" -- htmlOnly: simple (large) motd || selectableVehicle: motd with the ability to select a vehicle
 config.motd.title = "Welcome to a BeamMP server!"
 config.motd.description = [[
     [img]uj_base/welcome.gif[/img]
+    [br]
+    [color=#808080]Current server time is: [i]{serverTime}[/i].[/color]
     [br]
     [h2]Introduction[/h2]
     This is a sample motd provided to you by [i]Uncle Joey's Base[/i]. Uncle Joey's Base provides some essential client-side addons for your BeamMP server. This motd supports BBCode. [color=#FF69B4]Awesome[/color] isn't it?
@@ -66,6 +68,7 @@ config.weathersync.enabled = true -- enables or disables in-game weather syncing
 config.weathersync.cloudCover = 30 -- 0-100 (0 = no clouds; 100 = very cloudy)
 config.weathersync.windSpeed = 1 -- 0-10 (0 = no wind; 10 = very windy) -- affects clouds and rain
 config.weathersync.rainDrops = 20 -- 0-100 (0 = no rain; 100 = very rainy)
+config.weathersync.rainIsSnow = false -- set to true to enable snow
 config.weathersync.fogDensity = 0 -- 0-100 (0 = no fog; 100 = very foggy)
 config.weathersync.gravity = -9.81 -- -9.81 = earth
 

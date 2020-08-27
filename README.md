@@ -17,6 +17,9 @@ You can use BBCodes in your motd, `config.lua` contains a sample.
 `[url] [forumurl] [ico] [h1] [h2] [h3] [h4] [h5] [h6] [img] [action] [list] [olist] [strike] [code] [br] [MEDIA=youtube] [size] [color] [hr] [spoiler] [font] [left] [center] [right] [i] [b] [u] [s]`
 > Note: external urls are not allowed by BeamNG and will not work, only local links and links to beamng.com are allowed.
 
+Variables
+* `{serverTime}` prints the current server time
+
 
 ## Questions, Feature requests & Bugs
 Please create an issue here on GitHub.
