@@ -1,1 +1,66 @@
-local a={}local b={}local c;local function d(e,f)if b[e]then return scenetree.findObjectById(b[e])end;b[e]=0;local g=scenetree.findClassObjects(e)if g and tableSize(g)>0 then for h,i in pairs(g)do local j=scenetree.findObject(i)if j and(i==f or not f)then b[e]=j:getID()return j end end end;return nil end;local function k(l)local m=d("Precipitation","rain_coverage")or d("Precipitation")if m and l then m.numDrops=l;if c.weathersync.rainIsSnow then m.dataBlock=scenetree.findObject("Snow_menu")end end end;local function n()if c.weathersync.enabled then local o=c.weathersync.cloudCover/100*2.5;core_environment.setCloudCover(o)local p=c.weathersync.fogDensity/10000;core_environment.setFogDensity(p)local l=c.weathersync.rainDrops*10;k(l)core_environment.setWindSpeed(c.weathersync.windSpeed)core_environment.setGravity(c.weathersync.gravity)end end;local function q()c=rerequire("settings/config")n()end;a.onExtensionLoaded=q;return a
+--[[
+Created by vJoeyz#5115 (Uncle Joey)
+Please do not redistribute
+]]--
+
+local M = {}
+
+local envObjectIdCache = {}
+local config
+
+local function getObject(className, preferredObjName)
+    if envObjectIdCache[className] then
+        return scenetree.findObjectById(envObjectIdCache[className])
+    end
+  
+    envObjectIdCache[className] = 0
+    local objNames = scenetree.findClassObjects(className)
+    if objNames and tableSize(objNames) > 0 then
+        for _,name in pairs(objNames) do
+            local obj = scenetree.findObject(name)
+            if obj and (name == preferredObjName or not preferredObjName) then
+                envObjectIdCache[className] = obj:getID()
+                return obj
+            end
+        end
+    end
+
+    return nil
+end
+
+local function setPrecipitation(rainDrops) -- rain function has typo in core ng code
+    local rainObj = getObject("Precipitation", "rain_coverage") or getObject("Precipitation")
+    if rainObj and rainDrops then
+        rainObj.numDrops = rainDrops
+        
+        if config.weathersync.rainIsSnow then
+            rainObj.dataBlock = scenetree.findObject("Snow_menu")
+        end
+    end
+end
+
+local function setInitialWeather()
+    if config.weathersync.enabled then
+        local cloudCover = (config.weathersync.cloudCover / 100) * 2.5
+        core_environment.setCloudCover(cloudCover)
+
+        local fogDensity = config.weathersync.fogDensity / 10000
+        core_environment.setFogDensity(fogDensity)
+
+        local rainDrops = config.weathersync.rainDrops * 10
+        setPrecipitation(rainDrops)
+
+        core_environment.setWindSpeed(config.weathersync.windSpeed)
+
+        core_environment.setGravity(config.weathersync.gravity)
+    end
+end
+
+local function onExtensionLoaded()
+    config = rerequire("settings/config")
+    setInitialWeather()
+end
+
+M.onExtensionLoaded = onExtensionLoaded
+
+return M
