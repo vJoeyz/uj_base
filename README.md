@@ -10,7 +10,7 @@ Uncle Joey's Base provides some essential client-side addons for your BeamMP ser
 1. Download the latest release
 2. Configure the addon using the `settings/config.lua` file
 3. Optionally add or replace images in the `ui/uj_base` folder
-4. (Re)zip the mod by right clicking all files -> Send to -> Compressed (zipped) folder
+4. (Re)zip the mod by selecting all files and right clicking -> Send to -> Compressed (zipped) folder
 5. Place the .zip file in your `Resources/Client` folder of your BeamMP server
 
 ### Motd BBCodes
